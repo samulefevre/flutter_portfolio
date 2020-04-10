@@ -1,11 +1,11 @@
 {
-    "name": "flutter_portfolio",
-    "short_name": "flutter_portfolio",
+    "name": "Portfolio Samuel Lefèvre",
+    "short_name": "Portfolio Samuel Lefèvre",
     "start_url": ".",
     "display": "minimal-ui",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Portfolio with Flutter !",
+    "description": "Portfolio Samuel Lefèvre",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

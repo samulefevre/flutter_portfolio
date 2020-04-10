@@ -36,6 +36,7 @@ class AboutPage extends StatelessWidget {
           RichText(
             text: TextSpan(
                 text: 'Vous pouvez me retrouver sur la plateforme ',
+                style: kFont,
                 children: <TextSpan>[
                   TextSpan(
                     text: 'Malt.fr',
@@ -46,7 +47,9 @@ class AboutPage extends StatelessWidget {
                     recognizer: TapGestureRecognizer()
                       ..onTap = () async => await launch(kUrlMalt),
                   ),
-                  TextSpan(text: ' si vous avez besoin de mes services.'),
+                  TextSpan(
+                    text: ' si vous avez besoin de mes services.',
+                  ),
                 ]),
           ),
           SizedBox(

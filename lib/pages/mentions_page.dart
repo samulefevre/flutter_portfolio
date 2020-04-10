@@ -29,7 +29,7 @@ class MentionsPage extends StatelessWidget {
               DefaultAssetBundle.of(context).loadString('assets/mentions.json'),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return CircularProgressIndicator();
+              return Center(child: CircularProgressIndicator());
             }
             List<Mentions> mentions = parseJson(snapshot.data.toString());
 

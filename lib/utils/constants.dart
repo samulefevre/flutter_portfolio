@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/models/social_items.dart';
 import 'package:flutter_portfolio/utils/helpers.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 List<Widget> socialList() {
   return socialItems
@@ -30,6 +31,8 @@ TextStyle kPageSubtitle = TextStyle(
 
 TextStyle kHomeLink = TextStyle(
   color: Colors.teal,
-  fontSize: 18.0,
+  fontSize: 20.0,
   decoration: TextDecoration.underline,
 );
+
+TextStyle kFont = GoogleFonts.lato(color: Colors.white);

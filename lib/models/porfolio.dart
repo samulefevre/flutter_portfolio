@@ -19,7 +19,7 @@ final portfolioList = [
   Portfolio(
     image: 'assets/calculator.png',
     name: 'BMI Calculator',
-    description: 'BMI Calculator',
+    description: 'Calculate BMI.',
   ),
   Portfolio(
     image: 'assets/flashchat.png',

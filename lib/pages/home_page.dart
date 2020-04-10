@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utils/constants.dart';
 import 'package:flutter_portfolio/utils/helpers.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -26,32 +25,26 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Bonjour,',
-                style: GoogleFonts.lato(
-                  textStyle: TextStyle(
-                    color: Colors.teal,
-                    letterSpacing: .5,
-                    fontSize: 16.0,
-                  ),
+                style: TextStyle(
+                  color: Colors.teal,
+                  letterSpacing: .5,
+                  fontSize: 16.0,
                 ),
               ),
               Text(
                 'Samuel LEFEVRE',
-                style: GoogleFonts.lato(
-                  textStyle: TextStyle(
-                    color: Colors.teal,
-                    letterSpacing: .5,
-                    fontSize: 22.0,
-                  ),
+                style: TextStyle(
+                  color: Colors.teal,
+                  letterSpacing: .5,
+                  fontSize: 22.0,
                 ),
               ),
               Text(
-                'Flutter Developer',
-                style: GoogleFonts.lato(
-                  textStyle: TextStyle(
-                    color: Colors.white,
-                    letterSpacing: .5,
-                    fontSize: 30.0,
-                  ),
+                'Développeur Flutter !',
+                style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: .5,
+                  fontSize: 30.0,
                 ),
               ),
               OutlineButton(
@@ -59,13 +52,11 @@ class HomePage extends StatelessWidget {
                   color: Colors.teal,
                 ),
                 child: Text(
-                  'A PROPOS',
-                  style: GoogleFonts.lato(
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      letterSpacing: .5,
-                      fontSize: 16.0,
-                    ),
+                  'A propos'.toUpperCase(),
+                  style: TextStyle(
+                    color: Colors.white,
+                    letterSpacing: .5,
+                    fontSize: 16.0,
                   ),
                 ),
                 onPressed: () => pageController.animateToPage(
