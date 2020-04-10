@@ -12,8 +12,6 @@ class MentionsPage extends StatelessWidget {
       return [];
     }
 
-    print(json.decode(response));
-
     final parsed = json.decode(response).cast<Map<dynamic, dynamic>>();
     return parsed.map<Mentions>((json) => Mentions.fromJson(json)).toList();
   }
