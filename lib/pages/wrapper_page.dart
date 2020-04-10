@@ -45,10 +45,20 @@ class _WrapperPageState extends State<WrapperPage> {
               children: <Widget>[
                 for (int index = 0; index < 4; index++)
                   if (index == _currentPage) ...[
-                    SlideDots(true),
+                    InkWell(
+                      child: SlideDots(true),
+                      onTap: () {
+                        _navigateToPage(index);
+                      },
+                    ),
                     SizedBox(height: 8)
                   ] else ...[
-                    SlideDots(false),
+                    InkWell(
+                      child: SlideDots(false),
+                      onTap: () {
+                        _navigateToPage(index);
+                      },
+                    ),
                     SizedBox(height: 8)
                   ]
               ],
@@ -60,6 +70,18 @@ class _WrapperPageState extends State<WrapperPage> {
   }
 
   _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
+  _navigateToPage(int index) {
+    _pageController.animateToPage(
+      index,
+      duration: Duration(milliseconds: 300),
+      curve: Curves.easeIn,
+    );
+
     setState(() {
       _currentPage = index;
     });
