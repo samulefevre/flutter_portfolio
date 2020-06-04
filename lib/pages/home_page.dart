@@ -12,7 +12,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final media = MediaQuery.of(context).size;
+    Size media = MediaQuery.of(context).size;
+    bool isLarge = media.width > 500 ? true : false;
 
     return Container(
       height: media.height,
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.teal,
                   letterSpacing: .5,
-                  fontSize: 16.0,
+                  fontSize: isLarge ? 30.0 : 16.0,
                 ),
               ),
               Text(
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.teal,
                   letterSpacing: .5,
-                  fontSize: 22.0,
+                  fontSize: isLarge ? 38.0 : 22,
                 ),
               ),
               Text(
@@ -44,8 +45,11 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   letterSpacing: .5,
-                  fontSize: 30.0,
+                  fontSize: isLarge ? 46.0 : 30.0,
                 ),
+              ),
+              SizedBox(
+                height: 32.0,
               ),
               OutlineButton(
                 borderSide: BorderSide(
@@ -71,7 +75,8 @@ class HomePage extends StatelessWidget {
               InkWell(
                 child: Text(
                   'Engagez moi sur Malt.fr !',
-                  style: kHomeLink,
+                  style:
+                      isLarge ? kHomeLink.copyWith(fontSize: 24.0) : kHomeLink,
                 ),
                 onTap: () async {
                   await launchURL(kUrlMalt);

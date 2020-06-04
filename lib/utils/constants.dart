@@ -35,4 +35,4 @@ TextStyle kHomeLink = TextStyle(
   decoration: TextDecoration.underline,
 );
 
-TextStyle kFont = GoogleFonts.lato(color: Colors.white);
+TextStyle kFont = GoogleFonts.lato(color: Colors.white, fontSize: 16.0);

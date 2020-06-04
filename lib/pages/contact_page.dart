@@ -11,7 +11,8 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final media = MediaQuery.of(context).size;
+    Size media = MediaQuery.of(context).size;
+    bool isLarge = media.width > 500 ? true : false;
 
     return Container(
       padding: EdgeInsets.all(20.0),
@@ -26,28 +27,30 @@ class ContactPage extends StatelessWidget {
               ),
               Text(
                 'Contact'.toUpperCase(),
-                style: kPageTitle,
+                style: isLarge
+                    ? kPageSubtitle.copyWith(fontSize: 26.0)
+                    : kPageSubtitle,
               ),
               SizedBox(
-                height: 16.0,
+                height: 46.0,
               ),
-              (media.width > 500)
+              isLarge
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        buildContactMe(),
-                        buildFindMe(),
+                        buildContactMe(isLarge),
+                        buildFindMe(isLarge),
                       ],
                     )
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        buildContactMe(),
+                        buildContactMe(isLarge),
                         SizedBox(
                           height: 32.0,
                         ),
-                        buildFindMe(),
+                        buildFindMe(isLarge),
                       ],
                     ),
               SizedBox(
@@ -63,9 +66,7 @@ class ContactPage extends StatelessWidget {
                 FlatButton(
                   child: Text(
                     'Mentions légales',
-                    style: TextStyle(
-                      color: Colors.teal,
-                    ),
+                    style: kPageSubtitle,
                   ),
                   onPressed: () =>
                       Navigator.pushNamed(context, '/mentions-legales'),
@@ -78,32 +79,43 @@ class ContactPage extends StatelessWidget {
     );
   }
 
-  Column buildFindMe() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text('Où me trouver ?'),
-        SizedBox(
-          height: 16.0,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[...socialList()],
-        ),
-      ],
+  buildFindMe(bool isLarge) {
+    return Container(
+      height: 200.0,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('Où me trouver ?',
+              style: isLarge ? kFont.copyWith(fontSize: 20.0) : kFont),
+          SizedBox(
+            height: 16.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[...socialList()],
+          ),
+        ],
+      ),
     );
   }
 
-  Column buildContactMe() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text('Me contacter :'),
-        SizedBox(
-          height: 16.0,
-        ),
-        Text('samuel.lefevr@gmail.com'),
-      ],
+  buildContactMe(bool isLarge) {
+    return Container(
+      height: 200.0,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('Me contacter :',
+              style: isLarge ? kFont.copyWith(fontSize: 20.0) : kFont),
+          SizedBox(
+            height: 28.0,
+          ),
+          Text('samuel.lefevr@gmail.com',
+              style: isLarge ? kFont.copyWith(fontSize: 18.0) : kFont),
+        ],
+      ),
     );
   }
 }

@@ -23,48 +23,55 @@ class _WrapperPageState extends State<WrapperPage> {
     final media = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Stack(
-        alignment: AlignmentDirectional.bottomCenter,
-        children: <Widget>[
-          PageView(
-            controller: _pageController,
-            onPageChanged: _onPageChanged,
-            scrollDirection: Axis.vertical,
-            children: <Widget>[
-              HomePage(pageController: _pageController),
-              AboutPage(pageController: _pageController),
-              PortfolioPage(pageController: _pageController),
-              ContactPage(pageController: _pageController),
-            ],
-          ),
-          Positioned(
-            left: 0,
-            top: media.height / 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Color(0xff24374f), Color(0xff3D5A80)])),
+        child: Stack(
+          alignment: AlignmentDirectional.bottomCenter,
+          children: <Widget>[
+            PageView(
+              controller: _pageController,
+              onPageChanged: _onPageChanged,
+              scrollDirection: Axis.vertical,
               children: <Widget>[
-                for (int index = 0; index < 4; index++)
-                  if (index == _currentPage) ...[
-                    InkWell(
-                      child: SlideDots(true),
-                      onTap: () {
-                        _navigateToPage(index);
-                      },
-                    ),
-                    SizedBox(height: 8)
-                  ] else ...[
-                    InkWell(
-                      child: SlideDots(false),
-                      onTap: () {
-                        _navigateToPage(index);
-                      },
-                    ),
-                    SizedBox(height: 8)
-                  ]
+                HomePage(pageController: _pageController),
+                AboutPage(pageController: _pageController),
+                PortfolioPage(pageController: _pageController),
+                ContactPage(pageController: _pageController),
               ],
             ),
-          ),
-        ],
+            Positioned(
+              left: 0,
+              top: media.height / 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  for (int index = 0; index < 4; index++)
+                    if (index == _currentPage) ...[
+                      InkWell(
+                        child: SlideDots(true),
+                        onTap: () {
+                          _navigateToPage(index);
+                        },
+                      ),
+                      SizedBox(height: 8)
+                    ] else ...[
+                      InkWell(
+                        child: SlideDots(false),
+                        onTap: () {
+                          _navigateToPage(index);
+                        },
+                      ),
+                      SizedBox(height: 8)
+                    ]
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

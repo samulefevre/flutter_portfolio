@@ -13,7 +13,8 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final media = MediaQuery.of(context).size;
+    Size media = MediaQuery.of(context).size;
+    bool isLarge = media.width > 500 ? true : false;
 
     return Container(
       padding: EdgeInsets.all(30.0),
@@ -23,20 +24,24 @@ class AboutPage extends StatelessWidget {
         children: <Widget>[
           Text(
             'A propos'.toUpperCase(),
-            style: kPageTitle,
+            style: isLarge
+                ? kPageSubtitle.copyWith(fontSize: 26.0)
+                : kPageSubtitle,
           ),
           SizedBox(
             height: 16.0,
           ),
           Text(
-              'Je suis développeur freelance en télétravail et je développe des applications mobiles et sites web avec Flutter.'),
+            'Je suis développeur freelance en télétravail et je développe des applications mobiles et sites web avec Flutter.',
+            style: isLarge ? kFont.copyWith(fontSize: 20.0) : kFont,
+          ),
           SizedBox(
             height: 16.0,
           ),
           RichText(
             text: TextSpan(
                 text: 'Vous pouvez me retrouver sur la plateforme ',
-                style: kFont,
+                style: isLarge ? kFont.copyWith(fontSize: 20.0) : kFont,
                 children: <TextSpan>[
                   TextSpan(
                     text: 'Malt.fr',
@@ -57,13 +62,17 @@ class AboutPage extends StatelessWidget {
           ),
           Text(
             'Qu\'est ce que Flutter ?',
-            style: kPageSubtitle,
+            style: isLarge
+                ? kPageSubtitle.copyWith(fontSize: 24.0)
+                : kPageSubtitle,
           ),
           SizedBox(
             height: 16.0,
           ),
           Text(
-              'Flutter est un framework développé par Google pour créer de belles applications compilées en mode natif pour mobile, web et bureau à partir d\'une base de code unique.'),
+            'Flutter est un framework développé par Google pour créer de belles applications compilées en mode natif pour mobile, web et bureau à partir d\'une base de code unique.',
+            style: isLarge ? kFont.copyWith(fontSize: 20.0) : kFont,
+          ),
         ],
       ),
     );
