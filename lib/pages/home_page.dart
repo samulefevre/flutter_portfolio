@@ -4,8 +4,8 @@ import 'package:flutter_portfolio/utils/helpers.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
-    Key key,
-    @required this.pageController,
+    Key? key,
+    required this.pageController,
   }) : super(key: key);
 
   final PageController pageController;
@@ -51,9 +51,11 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 32.0,
               ),
-              OutlineButton(
-                borderSide: BorderSide(
-                  color: Colors.teal,
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(
+                    color: Colors.teal,
+                  ),
                 ),
                 child: Text(
                   'A propos'.toUpperCase(),

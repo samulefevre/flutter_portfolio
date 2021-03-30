@@ -3,8 +3,8 @@ import 'package:flutter_portfolio/utils/constants.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({
-    Key key,
-    @required this.pageController,
+    Key? key,
+    required this.pageController,
   }) : super(key: key);
 
   final PageController pageController;
@@ -63,7 +63,7 @@ class ContactPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                FlatButton(
+                TextButton(
                   child: Text(
                     'Mentions légales',
                     style: kPageSubtitle,

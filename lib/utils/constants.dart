@@ -12,7 +12,7 @@ List<Widget> socialList() {
             color: Colors.white,
           ),
           onPressed: () async {
-            await launchURL(socialItem.link);
+            await launchURL(socialItem.link!);
           }))
       .toList();
 }

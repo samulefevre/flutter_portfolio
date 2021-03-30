@@ -5,8 +5,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({
-    Key key,
-    @required this.pageController,
+    Key? key,
+    required this.pageController,
   }) : super(key: key);
 
   final PageController pageController;

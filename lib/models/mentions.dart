@@ -4,13 +4,13 @@ class Mentions {
     this.text,
   });
 
-  final String title;
-  final List<dynamic> text;
+  final String? title;
+  final List<dynamic>? text;
 
   factory Mentions.fromJson(Map<dynamic, dynamic> json) {
     return new Mentions(
-      title: json['title'] as String ?? '',
-      text: json['text'] as List<dynamic> ?? [],
+      title: json['title'] as String? ?? '',
+      text: json['text'] as List<dynamic>? ?? [],
     );
   }
 }

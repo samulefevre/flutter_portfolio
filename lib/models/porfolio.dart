@@ -6,8 +6,8 @@ class Portfolio {
   });
 
   final image;
-  final String name;
-  final String description;
+  final String? name;
+  final String? description;
 }
 
 final portfolioList = [

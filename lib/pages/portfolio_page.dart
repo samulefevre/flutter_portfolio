@@ -4,8 +4,8 @@ import 'package:flutter_portfolio/utils/constants.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({
-    Key key,
-    @required this.pageController,
+    Key? key,
+    required this.pageController,
   }) : super(key: key);
 
   final PageController pageController;
@@ -51,9 +51,9 @@ class PortfolioPage extends StatelessWidget {
 }
 
 class BoxProject extends StatelessWidget {
-  const BoxProject({Key key, this.portfolio}) : super(key: key);
+  const BoxProject({Key? key, this.portfolio}) : super(key: key);
 
-  final Portfolio portfolio;
+  final Portfolio? portfolio;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class BoxProject extends StatelessWidget {
               width: 120,
               height: 120,
               child: Image(
-                image: AssetImage(portfolio.image),
+                image: AssetImage(portfolio!.image),
                 fit: BoxFit.cover,
                 alignment: Alignment.center,
               ),
@@ -84,11 +84,11 @@ class BoxProject extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(portfolio.name),
+                    Text(portfolio!.name!),
                     SizedBox(
                       height: 8,
                     ),
-                    Text(portfolio.description),
+                    Text(portfolio!.description!),
                   ],
                 ),
               ),

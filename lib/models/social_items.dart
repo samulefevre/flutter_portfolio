@@ -7,8 +7,8 @@ class SocialItems {
     this.link,
   });
 
-  final IconData logo;
-  final String link;
+  final IconData? logo;
+  final String? link;
 }
 
 final socialItems = [
