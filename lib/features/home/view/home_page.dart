@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                       width: 2,
                     ),
                   ),
-                  child: const Text('ABOUT'),
+                  child: Text('About'.toUpperCase()),
                 ),
                 const SizedBox(height: 20),
                 TextButton(
