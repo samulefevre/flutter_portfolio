@@ -11,16 +11,22 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   bloc: ^7.0.0
+  flow_builder: ^0.0.2
   flutter_bloc: ^7.0.0
+  font_awesome_flutter: ^9.0.0
+  google_fonts: ^2.1.0
   intl: ^0.17.0
+  url_launcher: ^6.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   bloc_test: ^8.0.0
-  mocktail: ^0.1.0
-  very_good_analysis: ^2.0.0
+  mocktail: ^0.1.2
+  very_good_analysis: ^2.0.3
 
 flutter:
   uses-material-design: true
