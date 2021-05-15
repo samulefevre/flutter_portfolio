@@ -8,17 +8,19 @@ class SocialIcons extends StatelessWidget {
 
   List<Widget> socialList() {
     return socialItems
-        .map((socialItem) => Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              child: IconButton(
-                  icon: FaIcon(
-                    socialItem.logo,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    launchURL(socialItem.link!);
-                  }),
-            ))
+        .map(
+          (socialItem) => Container(
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            child: IconButton(
+                icon: FaIcon(
+                  socialItem.logo,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  launchURL(socialItem.link!);
+                }),
+          ),
+        )
         .toList();
   }
 
