@@ -1,12 +1,9 @@
 import 'package:flow_builder/flow_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/app/routes/routes.dart';
-import 'package:flutter_portfolio/app/utils/constants.dart';
-import 'package:flutter_portfolio/app/utils/launch_url.dart';
 import 'package:flutter_portfolio/features/about/about.dart';
 import 'package:flutter_portfolio/features/home/home.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   group('HomePage', () {
@@ -15,7 +12,7 @@ void main() {
     const textJob = 'Développeur web et mobile';
     const textMalt = 'Engagez moi sur Malt.fr !';
 
-    const keyMaltTextButton = const Key('malt_textButton');
+    const keyMaltTextButton = Key('malt_textButton');
 
     testWidgets('should have text $textHello', (WidgetTester tester) async {
       await tester.pumpWidget(const MaterialApp(home: HomePage()));
