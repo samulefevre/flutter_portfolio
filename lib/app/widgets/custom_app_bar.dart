@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
               isActive: (activePage == AppPages.home) ? true : false,
             ),
             _MenuButton(
-              text: 'About',
+              text: 'A propos',
               appPage: AppPages.about,
               isActive: (activePage == AppPages.about) ? true : false,
             ),

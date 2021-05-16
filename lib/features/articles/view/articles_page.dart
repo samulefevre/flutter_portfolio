@@ -11,7 +11,22 @@ class ArticlesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(activePage: AppPages.articles),
-      body: Container(child: const Text('Articles')),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 40),
+          width: MediaQuery.of(context).size.width * 0.65,
+          child: Column(
+            children: [
+              Text(
+                'Articles'.toUpperCase(),
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              const SizedBox(height: 32),
+              const Text('Coming soon ...')
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

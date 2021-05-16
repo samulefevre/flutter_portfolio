@@ -23,15 +23,7 @@ class ContactPage extends StatelessWidget {
             children: [
               Text(
                 'Contact'.toUpperCase(),
-                style: isLarge
-                    ? TextStyle(
-                        fontSize: 30.0,
-                        color: Theme.of(context).accentColor,
-                      )
-                    : TextStyle(
-                        fontSize: 26.0,
-                        color: Theme.of(context).accentColor,
-                      ),
+                style: Theme.of(context).textTheme.headline4,
               ),
               const SizedBox(height: 46.0),
               isLarge
