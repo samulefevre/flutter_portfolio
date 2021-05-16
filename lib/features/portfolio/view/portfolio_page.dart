@@ -22,6 +22,7 @@ class PortfolioPage extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Portfolio'.toUpperCase(),
+                key: const Key('portfolio_text'),
                 style: Theme.of(context).textTheme.headline4,
               ),
               const SizedBox(height: 16.0),

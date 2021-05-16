@@ -23,6 +23,7 @@ class ContactPage extends StatelessWidget {
             children: [
               Text(
                 'Contact'.toUpperCase(),
+                key: const Key('contact_text'),
                 style: Theme.of(context).textTheme.headline4,
               ),
               const SizedBox(height: 46.0),

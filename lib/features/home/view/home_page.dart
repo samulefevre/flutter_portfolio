@@ -44,6 +44,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
                 OutlinedButton(
+                  key: const Key('about_OutlinedButton'),
                   onPressed: () {
                     context.flow<AppPages>().update((next) => AppPages.about);
                   },
@@ -60,9 +61,8 @@ class HomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TextButton(
-                  onPressed: () {
-                    launchURL(kUrlMalt);
-                  },
+                  key: const Key('malt_textButton'),
+                  onPressed: () => launchURL(kUrlMalt),
                   child: const Text(
                     'Engagez moi sur Malt.fr !',
                     style: TextStyle(
