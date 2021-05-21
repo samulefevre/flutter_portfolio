@@ -4,9 +4,9 @@ import 'package:flutter_portfolio/app/widgets/widgets.dart';
 import 'package:flutter_portfolio/features/home/home.dart';
 
 class ContactPage extends StatelessWidget {
-  const ContactPage({Key? key}) : super(key: key);
+  ContactPage({Key? key}) : super(key: key);
 
-  static Page page() => const MaterialPage<void>(child: ContactPage());
+  static Page page() => MaterialPage<void>(child: ContactPage());
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +14,8 @@ class ContactPage extends StatelessWidget {
     final isLarge = media.width > 500 ? true : false;
 
     return Scaffold(
-        appBar: const CustomAppBar(
-          activePage: AppPages.contact,
-        ),
+        appBar: const CustomAppBar(activePage: AppPages.contact),
+        drawer: const DrawerMobile(activePage: AppPages.contact),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,17 +30,17 @@ class ContactPage extends StatelessWidget {
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        _BuildContactMe(isLarge: isLarge),
-                        _BuildFindMe(isLarge: isLarge),
+                        const _BuildContactMe(),
+                        const _BuildFindMe(),
                       ],
                     )
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        _BuildContactMe(isLarge: isLarge),
+                        const _BuildContactMe(),
                         const SizedBox(height: 32.0),
-                        _BuildFindMe(isLarge: isLarge),
+                        const _BuildFindMe(),
                       ],
                     ),
             ],
@@ -51,8 +50,7 @@ class ContactPage extends StatelessWidget {
 }
 
 class _BuildFindMe extends StatelessWidget {
-  const _BuildFindMe({Key? key, required this.isLarge}) : super(key: key);
-  final bool isLarge;
+  const _BuildFindMe({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,18 +60,11 @@ class _BuildFindMe extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            'Où me trouver ?',
-            style: isLarge
-                ? TextStyle(
-                    fontSize: 20.0,
-                    color: Theme.of(context).primaryColor,
-                  )
-                : TextStyle(
-                    fontSize: 20.0,
-                    color: Theme.of(context).primaryColor,
-                  ),
-          ),
+          Text('Où me trouver ?',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Theme.of(context).primaryColor,
+              )),
           const SizedBox(height: 16.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -86,8 +77,7 @@ class _BuildFindMe extends StatelessWidget {
 }
 
 class _BuildContactMe extends StatelessWidget {
-  const _BuildContactMe({Key? key, required this.isLarge}) : super(key: key);
-  final bool isLarge;
+  const _BuildContactMe({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -97,27 +87,21 @@ class _BuildContactMe extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text('Me contacter :',
-              style: isLarge
-                  ? TextStyle(
-                      fontSize: 20.0,
-                      color: Theme.of(context).primaryColor,
-                    )
-                  : TextStyle(
-                      fontSize: 20.0,
-                      color: Theme.of(context).primaryColor,
-                    )),
+          Text(
+            'Me contacter :',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
           const SizedBox(height: 28.0),
-          Text('samuel.lefevr@gmail.com',
-              style: isLarge
-                  ? TextStyle(
-                      fontSize: 18.0,
-                      color: Theme.of(context).primaryColor,
-                    )
-                  : TextStyle(
-                      fontSize: 18.0,
-                      color: Theme.of(context).primaryColor,
-                    )),
+          Text(
+            'samuel.lefevr@gmail.com',
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
         ],
       ),
     );

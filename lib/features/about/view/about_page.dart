@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/app/routes/routes.dart';
 import 'package:flutter_portfolio/app/utils/utils.dart';
 import 'package:flutter_portfolio/app/widgets/widgets.dart';
+import 'package:flutter_portfolio/features/home/home.dart';
 
 class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+  AboutPage({Key? key}) : super(key: key);
 
-  static Page page() => const MaterialPage<void>(child: AboutPage());
+  static Page page() => MaterialPage<void>(child: AboutPage());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        activePage: AppPages.about,
-      ),
+      appBar: const CustomAppBar(activePage: AppPages.about),
+      drawer: const DrawerMobile(activePage: AppPages.about),
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 40),

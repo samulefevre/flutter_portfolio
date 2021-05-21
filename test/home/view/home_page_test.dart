@@ -15,17 +15,17 @@ void main() {
     const keyMaltTextButton = Key('malt_textButton');
 
     testWidgets('should have text $textHello', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomePage()));
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
       expect(find.text(textHello), findsOneWidget);
     });
 
     testWidgets('should have text $textName', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomePage()));
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
       expect(find.text(textName), findsOneWidget);
     });
 
     testWidgets('should have text $textJob', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomePage()));
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
       expect(find.text(textJob), findsOneWidget);
     });
 
@@ -47,13 +47,13 @@ void main() {
     });
 
     testWidgets('should have text $textMalt', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomePage()));
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
       expect(find.text(textMalt), findsOneWidget);
     });
 
     testWidgets('click on malt_textButton should go to maltPage',
         (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomePage()));
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
       var button = find.byKey(keyMaltTextButton);
       expect(button, findsOneWidget);
       await tester.tap(button);
@@ -62,7 +62,7 @@ void main() {
     });
 
     testWidgets('should have SocialIcons widget', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: HomePage()));
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
       expect(find.byType(SocialIcons), findsOneWidget);
     });
   });

@@ -5,8 +5,8 @@ import 'package:flutter_portfolio/app/routes/routes.dart';
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
-    this.activePage = AppPages.home,
-  })  : preferredSize = const Size.fromHeight(60.0),
+    required this.activePage,
+  })   : preferredSize = const Size.fromHeight(60.0),
         super(key: key);
 
   @override
@@ -15,42 +15,48 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: preferredSize.height,
-        width: MediaQuery.of(context).size.width * 0.8,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            _MenuButton(
-              text: 'Accueil',
-              appPage: AppPages.home,
-              isActive: (activePage == AppPages.home) ? true : false,
+    final size = MediaQuery.of(context).size;
+    print(size.width);
+    final isMobile = size.width < 500 ? true : false;
+
+    return !isMobile
+        ? Center(
+            child: Container(
+              height: preferredSize.height,
+              width: MediaQuery.of(context).size.width * 0.8,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  _MenuButton(
+                    text: 'Accueil',
+                    appPage: AppPages.home,
+                    isActive: (activePage == AppPages.home) ? true : false,
+                  ),
+                  _MenuButton(
+                    text: 'A propos',
+                    appPage: AppPages.about,
+                    isActive: (activePage == AppPages.about) ? true : false,
+                  ),
+                  _MenuButton(
+                    text: 'Portfolio',
+                    appPage: AppPages.portfolio,
+                    isActive: (activePage == AppPages.portfolio) ? true : false,
+                  ),
+                  _MenuButton(
+                    text: 'Articles',
+                    appPage: AppPages.articles,
+                    isActive: (activePage == AppPages.articles) ? true : false,
+                  ),
+                  _MenuButton(
+                    text: 'Contact',
+                    appPage: AppPages.contact,
+                    isActive: (activePage == AppPages.contact) ? true : false,
+                  ),
+                ],
+              ),
             ),
-            _MenuButton(
-              text: 'A propos',
-              appPage: AppPages.about,
-              isActive: (activePage == AppPages.about) ? true : false,
-            ),
-            _MenuButton(
-              text: 'Portfolio',
-              appPage: AppPages.portfolio,
-              isActive: (activePage == AppPages.portfolio) ? true : false,
-            ),
-            _MenuButton(
-              text: 'Articles',
-              appPage: AppPages.articles,
-              isActive: (activePage == AppPages.articles) ? true : false,
-            ),
-            _MenuButton(
-              text: 'Contact',
-              appPage: AppPages.contact,
-              isActive: (activePage == AppPages.contact) ? true : false,
-            ),
-          ],
-        ),
-      ),
-    );
+          )
+        : _MenuMobile();
   }
 }
 
@@ -86,6 +92,27 @@ class _MenuButton extends StatelessWidget {
         child: Text(
           text.toUpperCase(),
         ),
+      ),
+    );
+  }
+}
+
+class _MenuMobile extends StatelessWidget {
+  _MenuMobile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.centerLeft,
+      child: IconButton(
+        icon: Icon(
+          Icons.menu,
+          color: Theme.of(context).primaryColor,
+        ),
+        onPressed: () {
+          print('open menu');
+          Scaffold.of(context).openDrawer();
+        },
       ),
     );
   }

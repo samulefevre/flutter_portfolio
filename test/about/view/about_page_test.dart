@@ -19,23 +19,23 @@ void main() {
         'partir d\'une base de code unique.';
 
     testWidgets('should have 2 title $titleAbout', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: AboutPage()));
+      await tester.pumpWidget(MaterialApp(home: AboutPage()));
       expect(find.text(titleAbout), findsNWidgets(2));
     });
 
     testWidgets('should have text $textAbout1', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: AboutPage()));
+      await tester.pumpWidget(MaterialApp(home: AboutPage()));
       expect(find.text(textAbout1), findsOneWidget);
     });
 
     testWidgets('should have richText with key textAbout2_richText',
         (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: AboutPage()));
+      await tester.pumpWidget(MaterialApp(home: AboutPage()));
       expect(find.byKey(const Key('textAbout2_richText')), findsOneWidget);
     });
 
     testWidgets('should have text $textFlutter', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: AboutPage()));
+      await tester.pumpWidget(MaterialApp(home: AboutPage()));
       expect(find.text(textFlutter), findsOneWidget);
     });
   });

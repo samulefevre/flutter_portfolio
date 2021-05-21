@@ -7,7 +7,7 @@ void main() {
     final keyContactText = const Key('contact_text');
 
     testWidgets('should have key portfolio_text', (WidgetTester tester) async {
-      await tester.pumpWidget(const MaterialApp(home: ContactPage()));
+      await tester.pumpWidget(MaterialApp(home: ContactPage()));
       expect(find.byKey(keyContactText), findsOneWidget);
     });
   });
