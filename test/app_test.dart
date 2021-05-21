@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_portfolio/app/app.dart';
+import 'package:flutter_portfolio/app/view/app.dart';
 import 'package:flutter_portfolio/features/home/home.dart';
 
 void main() {

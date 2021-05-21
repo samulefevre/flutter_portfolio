@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/app/utils/utils.dart';
 import 'package:flutter_portfolio/features/home/home.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/link.dart';
 
 class SocialIcons extends StatelessWidget {
   const SocialIcons({Key? key}) : super(key: key);
@@ -11,14 +11,19 @@ class SocialIcons extends StatelessWidget {
         .map(
           (socialItem) => Container(
             margin: const EdgeInsets.symmetric(horizontal: 10),
-            child: IconButton(
-                icon: FaIcon(
-                  socialItem.logo,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  launchURL(socialItem.link!);
-                }),
+            child: Link(
+              uri: Uri.parse(socialItem.link!),
+              target: LinkTarget.blank,
+              builder: (context, followLink) {
+                return IconButton(
+                  icon: FaIcon(
+                    socialItem.logo,
+                    color: Colors.white,
+                  ),
+                  onPressed: followLink,
+                );
+              },
+            ),
           ),
         )
         .toList();

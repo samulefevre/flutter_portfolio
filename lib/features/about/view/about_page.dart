@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/app/routes/routes.dart';
 import 'package:flutter_portfolio/app/utils/utils.dart';
 import 'package:flutter_portfolio/app/widgets/widgets.dart';
-import 'package:flutter_portfolio/features/home/home.dart';
 
 class AboutPage extends StatelessWidget {
   AboutPage({Key? key}) : super(key: key);

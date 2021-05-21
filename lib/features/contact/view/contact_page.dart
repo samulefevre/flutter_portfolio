@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/app/routes/routes.dart';
 import 'package:flutter_portfolio/app/widgets/widgets.dart';
-import 'package:flutter_portfolio/features/home/home.dart';
 
 class ContactPage extends StatelessWidget {
   ContactPage({Key? key}) : super(key: key);
