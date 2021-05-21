@@ -1,6 +1,6 @@
 {
-    "name": "Flutter Portfolio",
-    "short_name": "Flutter Portfolio",
+    "name": "flutter_portfolio",
+    "short_name": "flutter_portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
