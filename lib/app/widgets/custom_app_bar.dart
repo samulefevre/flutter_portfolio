@@ -6,7 +6,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     required this.activePage,
-  })   : preferredSize = const Size.fromHeight(60.0),
+  })  : preferredSize = const Size.fromHeight(60.0),
         super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     print(size.width);
-    final isMobile = size.width < 500 ? true : false;
+    final isMobile = size.width < 600 ? true : false;
 
     return !isMobile
         ? Center(
@@ -81,7 +81,7 @@ class _MenuButton extends StatelessWidget {
         },
         style: TextButton.styleFrom(
             minimumSize: const Size(100, 40),
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             primary: isActive
                 ? Theme.of(context).accentColor
                 : Theme.of(context).primaryColor,
@@ -110,7 +110,6 @@ class _MenuMobile extends StatelessWidget {
           color: Theme.of(context).primaryColor,
         ),
         onPressed: () {
-          print('open menu');
           Scaffold.of(context).openDrawer();
         },
       ),

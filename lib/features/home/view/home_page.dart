@@ -12,7 +12,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(activePage: AppPages.home),
+      appBar: const CustomAppBar(
+        key: Key('customAppBar'),
+        activePage: AppPages.home,
+      ),
       drawer: const DrawerMobile(activePage: AppPages.home),
       body: Container(
         padding: const EdgeInsets.all(10.0),

@@ -13,7 +13,12 @@ void main() {
     const textMalt = 'Engagez moi sur Malt.fr !';
 
     const keyMaltTextButton = Key('malt_textButton');
+    const keyCustomAppBar = Key('customAppBar');
 
+    testWidgets('should have widget CustomAppBar', (WidgetTester tester) async {
+      await tester.pumpWidget(MaterialApp(home: HomePage()));
+      expect(find.byKey(keyCustomAppBar), findsOneWidget);
+    });
     testWidgets('should have text $textHello', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: HomePage()));
       expect(find.text(textHello), findsOneWidget);
