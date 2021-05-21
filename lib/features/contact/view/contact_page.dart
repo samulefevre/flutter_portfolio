@@ -9,11 +9,13 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final media = MediaQuery.of(context).size;
-    final isLarge = media.width > 500 ? true : false;
+    final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
 
     return Scaffold(
-        appBar: const CustomAppBar(activePage: AppPages.contact),
+        appBar: CustomAppBar(
+          activePage: AppPages.contact,
+          isMobile: isMobile,
+        ),
         drawer: const DrawerMobile(activePage: AppPages.contact),
         body: Center(
           child: Column(
@@ -25,7 +27,7 @@ class ContactPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline4,
               ),
               const SizedBox(height: 46.0),
-              isLarge
+              !isMobile
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[

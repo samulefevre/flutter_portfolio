@@ -11,8 +11,12 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
     return Scaffold(
-      appBar: const CustomAppBar(activePage: AppPages.about),
+      appBar: CustomAppBar(
+        activePage: AppPages.about,
+        isMobile: isMobile,
+      ),
       drawer: const DrawerMobile(activePage: AppPages.about),
       body: Center(
         child: Container(

@@ -11,10 +11,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
     return Scaffold(
-      appBar: const CustomAppBar(
-        key: Key('customAppBar'),
+      appBar: CustomAppBar(
+        key: const Key('customAppBar'),
         activePage: AppPages.home,
+        isMobile: isMobile,
       ),
       drawer: const DrawerMobile(activePage: AppPages.home),
       body: Container(

@@ -6,19 +6,17 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     required this.activePage,
+    required this.isMobile,
   })  : preferredSize = const Size.fromHeight(60.0),
         super(key: key);
 
   @override
   final Size preferredSize;
   final AppPages activePage;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    print(size.width);
-    final isMobile = size.width < 600 ? true : false;
-
     return !isMobile
         ? Center(
             child: Container(
@@ -28,26 +26,31 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   _MenuButton(
+                    name: 'home',
                     text: 'Accueil',
                     appPage: AppPages.home,
                     isActive: (activePage == AppPages.home) ? true : false,
                   ),
                   _MenuButton(
+                    name: 'about',
                     text: 'A propos',
                     appPage: AppPages.about,
                     isActive: (activePage == AppPages.about) ? true : false,
                   ),
                   _MenuButton(
+                    name: 'portfolio',
                     text: 'Portfolio',
                     appPage: AppPages.portfolio,
                     isActive: (activePage == AppPages.portfolio) ? true : false,
                   ),
                   _MenuButton(
+                    name: 'articles',
                     text: 'Articles',
                     appPage: AppPages.articles,
                     isActive: (activePage == AppPages.articles) ? true : false,
                   ),
                   _MenuButton(
+                    name: 'contact',
                     text: 'Contact',
                     appPage: AppPages.contact,
                     isActive: (activePage == AppPages.contact) ? true : false,
@@ -62,12 +65,14 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
 
 class _MenuButton extends StatelessWidget {
   const _MenuButton({
+    required this.name,
     required this.text,
     required this.appPage,
     this.isActive = false,
     Key? key,
   }) : super(key: key);
 
+  final String name;
   final String text;
   final AppPages appPage;
   final bool isActive;
@@ -76,6 +81,7 @@ class _MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flexible(
       child: TextButton(
+        key: Key('${name}_textButton'),
         onPressed: () {
           context.flow<AppPages>().update((next) => appPage);
         },
@@ -105,6 +111,7 @@ class _MenuMobile extends StatelessWidget {
     return Container(
       alignment: Alignment.centerLeft,
       child: IconButton(
+        key: const Key('menu_IconButton'),
         icon: Icon(
           Icons.menu,
           color: Theme.of(context).primaryColor,

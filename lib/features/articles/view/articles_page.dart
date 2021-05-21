@@ -9,8 +9,12 @@ class ArticlesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
     return Scaffold(
-      appBar: const CustomAppBar(activePage: AppPages.articles),
+      appBar: CustomAppBar(
+        activePage: AppPages.articles,
+        isMobile: isMobile,
+      ),
       drawer: const DrawerMobile(activePage: AppPages.articles),
       body: Center(
         child: Container(
