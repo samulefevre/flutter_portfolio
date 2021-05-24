@@ -4,23 +4,23 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('AboutPage', () {
-    final titleAbout = 'A propos'.toUpperCase();
+    final keyTitleAbout = const Key('about_Title');
 
     const textAbout1 = 'Je suis développeur freelance en télétravail '
         'et je développe des applications mobiles '
         'et sites web avec Flutter.';
-
-    /* const textAbout2 = 'Vous pouvez me retrouver sur la plateforme Malt.fr '
-        'si vous avez besoin de mes services.'; */
 
     const textFlutter = 'Flutter est un framework développé par Google '
         'pour créer de belles applications compilées '
         'en mode natif pour mobile, web et bureau à '
         'partir d\'une base de code unique.';
 
-    testWidgets('should have 2 title $titleAbout', (WidgetTester tester) async {
+    final keyWrapperContainer = const Key('wrapper_Container');
+
+    testWidgets('should have key ${keyTitleAbout.toString()}',
+        (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: AboutPage()));
-      expect(find.text(titleAbout), findsNWidgets(2));
+      expect(find.byKey(keyTitleAbout), findsOneWidget);
     });
 
     testWidgets('should have text $textAbout1', (WidgetTester tester) async {
@@ -37,6 +37,22 @@ void main() {
     testWidgets('should have text $textFlutter', (WidgetTester tester) async {
       await tester.pumpWidget(MaterialApp(home: AboutPage()));
       expect(find.text(textFlutter), findsOneWidget);
+    });
+
+    testWidgets('not mobile', (WidgetTester tester) async {
+      await tester.pumpWidget(MaterialApp(home: AboutPage()));
+      expect(find.byKey(keyWrapperContainer), findsWidgets);
+    });
+
+    testWidgets('mobile', (WidgetTester tester) async {
+      tester.binding.window.physicalSizeTestValue = const Size(320, 596);
+      tester.binding.window.devicePixelRatioTestValue = 1.0;
+
+      await tester.pumpWidget(MaterialApp(home: AboutPage()));
+      expect(find.byKey(keyWrapperContainer), findsWidgets);
+
+      addTearDown(tester.binding.window.clearPhysicalSizeTestValue);
+      addTearDown(tester.binding.window.clearDevicePixelRatioTestValue);
     });
   });
 }

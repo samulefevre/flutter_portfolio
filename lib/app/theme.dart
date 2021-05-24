@@ -5,7 +5,7 @@ const primaryColor = Color(0xfff5f6fa);
 const accentColor = Color(0xff0097e6);
 
 final theme = ThemeData(
-  textTheme: GoogleFonts.openSansTextTheme().copyWith(
+  textTheme: GoogleFonts.latoTextTheme().copyWith(
       bodyText2: const TextStyle(color: primaryColor),
       headline4: const TextStyle(color: accentColor)),
   primaryColorDark: const Color(0xFF0097A7),
@@ -13,6 +13,9 @@ final theme = ThemeData(
   primaryColor: primaryColor,
   accentColor: accentColor,
   scaffoldBackgroundColor: const Color(0xFF192a56), // const Color(0xFF273c75),
+  iconTheme: const IconThemeData(color: primaryColor),
+  appBarTheme:
+      const AppBarTheme(actionsIconTheme: IconThemeData(color: primaryColor)),
   // backgroundColor: Colors.red,
   inputDecorationTheme: InputDecorationTheme(
     border: OutlineInputBorder(

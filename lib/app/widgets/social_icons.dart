@@ -10,19 +10,21 @@ class SocialIcons extends StatelessWidget {
     return socialItems
         .map(
           (socialItem) => Container(
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            child: Link(
-              uri: Uri.parse(socialItem.link!),
-              target: LinkTarget.blank,
-              builder: (context, followLink) {
-                return IconButton(
-                  icon: FaIcon(
-                    socialItem.logo,
-                    color: Colors.white,
-                  ),
-                  onPressed: followLink,
-                );
-              },
+            //width: 48,
+            child: Center(
+              child: Link(
+                uri: Uri.parse(socialItem.link!),
+                target: LinkTarget.blank,
+                builder: (context, followLink) {
+                  return IconButton(
+                    icon: FaIcon(
+                      socialItem.logo,
+                      color: Colors.white,
+                    ),
+                    onPressed: followLink,
+                  );
+                },
+              ),
             ),
           ),
         )

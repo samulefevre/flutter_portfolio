@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('CustomAppBar', () {
     final keyArticlesTextButton = const Key('articles_textButton');
-    final keyMenuIconButton = const Key('menu_IconButton');
+    final keyMobileAppBar = const Key('mobile_AppBar');
     testWidgets('should have bar when not mobile', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
@@ -53,7 +53,7 @@ void main() {
           ),
         ),
       );
-      var button = find.byKey(keyMenuIconButton);
+      var button = find.byKey(keyMobileAppBar);
       expect(button, findsWidgets);
       await tester.tap(button);
       await tester.pumpAndSettle();

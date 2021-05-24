@@ -1,7 +1,6 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/app/routes/routes.dart';
-import 'package:flutter_portfolio/app/utils/utils.dart';
+
 import 'package:flutter_portfolio/app/widgets/widgets.dart';
 
 class AboutPage extends StatelessWidget {
@@ -20,14 +19,18 @@ class AboutPage extends StatelessWidget {
       drawer: const DrawerMobile(activePage: AppPages.about),
       body: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 40),
-          width: MediaQuery.of(context).size.width * 0.65,
+          key: const Key('wrapper_Container'),
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+          width: !isMobile
+              ? MediaQuery.of(context).size.width * 0.65
+              : MediaQuery.of(context).size.width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'A propos'.toUpperCase(),
                 style: Theme.of(context).textTheme.headline4,
+                key: const Key('about_Title'),
               ),
               const SizedBox(height: 32.0),
               const Text(
@@ -41,14 +44,14 @@ class AboutPage extends StatelessWidget {
                 text: TextSpan(
                   text: 'Vous pouvez me retrouver sur la plateforme ',
                   children: <TextSpan>[
-                    TextSpan(
+                    const TextSpan(
                       text: 'Malt.fr',
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
                         decoration: TextDecoration.underline,
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () => launchURL(kUrlMalt),
+                      /* recognizer: TapGestureRecognizer()
+                        ..onTap = () => launchURL(kUrlMalt), */
                     ),
                     const TextSpan(
                         text: ' si vous avez besoin de mes services.'),
@@ -57,14 +60,18 @@ class AboutPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 32.0),
-              Text('Qu\'est ce que Flutter ?',
-                  style: Theme.of(context).textTheme.headline4),
+              FittedBox(
+                child: Text('Qu\'est ce que Flutter ?',
+                    style: Theme.of(context).textTheme.headline4),
+              ),
               const SizedBox(height: 32.0),
-              const Text(
-                'Flutter est un framework développé par Google '
-                'pour créer de belles applications compilées '
-                'en mode natif pour mobile, web et bureau à '
-                'partir d\'une base de code unique.',
+              const FittedBox(
+                child: Text(
+                  'Flutter est un framework développé par Google '
+                  'pour créer de belles applications compilées '
+                  'en mode natif pour mobile, web et bureau à '
+                  'partir d\'une base de code unique.',
+                ),
               ),
             ],
           ),

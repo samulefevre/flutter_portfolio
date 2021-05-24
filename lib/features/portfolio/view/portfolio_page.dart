@@ -10,6 +10,7 @@ class PortfolioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 600 ? true : false;
+    print(MediaQuery.of(context).size.width);
     return Scaffold(
       appBar: CustomAppBar(
         activePage: AppPages.portfolio,
@@ -18,8 +19,11 @@ class PortfolioPage extends StatelessWidget {
       drawer: const DrawerMobile(activePage: AppPages.portfolio),
       body: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 40),
-          width: MediaQuery.of(context).size.width * 0.65,
+          key: const Key('wrapper_Container'),
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+          width: !isMobile
+              ? MediaQuery.of(context).size.width * 0.65
+              : MediaQuery.of(context).size.width,
           child: Column(
             children: <Widget>[
               Text(
