@@ -1,36 +1,36 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-flutterportfolio-dev-43805-authRole",
-            "UnauthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-dev-43805-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-dev-43805-authRole",
-            "Region": "eu-central-1",
-            "DeploymentBucketName": "amplify-flutterportfolio-dev-43805-deployment",
-            "UnauthRoleName": "amplify-flutterportfolio-dev-43805-unauthRole",
-            "StackName": "amplify-flutterportfolio-dev-43805",
-            "StackId": "arn:aws:cloudformation:eu-central-1:839072184316:stack/amplify-flutterportfolio-dev-43805/12fe5e30-bc39-11eb-91c5-0af9cbca5fc6",
-            "AmplifyAppId": "d280rswwbe5972"
-        }
-    },
-    "prod": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-flutterportfolio-prod-51527-authRole",
-            "UnauthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-prod-51527-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-prod-51527-authRole",
-            "Region": "eu-central-1",
-            "DeploymentBucketName": "amplify-flutterportfolio-prod-51527-deployment",
-            "UnauthRoleName": "amplify-flutterportfolio-prod-51527-unauthRole",
-            "StackName": "amplify-flutterportfolio-prod-51527",
-            "StackId": "arn:aws:cloudformation:eu-central-1:839072184316:stack/amplify-flutterportfolio-prod-51527/4a153470-bc3e-11eb-8631-02e20d7bd04e",
-            "AmplifyAppId": "d280rswwbe5972"
-        },
-        "categories": {
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d280rswwbe5972",
-                    "type": "cicd"
-                }
-            }
-        }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flutterportfolio-dev-43805-authRole",
+      "UnauthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-dev-43805-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-dev-43805-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-flutterportfolio-dev-43805-deployment",
+      "UnauthRoleName": "amplify-flutterportfolio-dev-43805-unauthRole",
+      "StackName": "amplify-flutterportfolio-dev-43805",
+      "StackId": "arn:aws:cloudformation:eu-central-1:839072184316:stack/amplify-flutterportfolio-dev-43805/12fe5e30-bc39-11eb-91c5-0af9cbca5fc6",
+      "AmplifyAppId": "d280rswwbe5972"
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flutterportfolio-prod-51527-authRole",
+      "UnauthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-prod-51527-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::839072184316:role/amplify-flutterportfolio-prod-51527-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-flutterportfolio-prod-51527-deployment",
+      "UnauthRoleName": "amplify-flutterportfolio-prod-51527-unauthRole",
+      "StackName": "amplify-flutterportfolio-prod-51527",
+      "StackId": "arn:aws:cloudformation:eu-central-1:839072184316:stack/amplify-flutterportfolio-prod-51527/4a153470-bc3e-11eb-8631-02e20d7bd04e",
+      "AmplifyAppId": "d280rswwbe5972"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d280rswwbe5972",
+          "type": "cicd"
+        }
+      }
+    }
+  }
 }
