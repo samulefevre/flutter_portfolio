@@ -65,7 +65,7 @@ class AboutPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline4),
               ),
               const SizedBox(height: 32.0),
-              const FittedBox(
+              const Flexible(
                 child: Text(
                   'Flutter est un framework développé par Google '
                   'pour créer de belles applications compilées '
