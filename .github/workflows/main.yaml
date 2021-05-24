@@ -28,6 +28,16 @@ jobs:
       - name: Build for web
         run: flutter build web --target lib/main_production.dart
 
+      - name: Configure amplify
+        uses: ambientlight/amplify-cli-action@0.2.2
+        with:
+          amplify_command: configure
+          amplify_env: prod
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-central-1
+
       - name: Deploy to aws
         uses: ambientlight/amplify-cli-action@0.2.2
         with:
@@ -37,4 +47,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: eu-west-3
+          AWS_REGION: eu-central-1
