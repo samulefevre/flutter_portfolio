@@ -12,7 +12,7 @@ final theme = ThemeData(
   primaryColorLight: const Color(0xFFB2EBF2),
   primaryColor: primaryColor,
   accentColor: accentColor,
-  scaffoldBackgroundColor: const Color(0xFF192a56), // const Color(0xFF273c75),
+  scaffoldBackgroundColor: const Color(0xFF0F1624), // const Color(0xFF273c75),
   iconTheme: const IconThemeData(color: primaryColor),
   appBarTheme:
       const AppBarTheme(actionsIconTheme: IconThemeData(color: primaryColor)),
